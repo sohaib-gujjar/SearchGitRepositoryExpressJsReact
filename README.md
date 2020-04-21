@@ -1,19 +1,19 @@
-Example project to search for Github repositories using Github search api(​https://developer.github.com/v3/) using ExpressJS and ReactJS.
+## Search Github Repositories
+
+Example project to search for Github repositories using Github search api [Git Api](​https://developer.github.com/v3/) using ExpressJS and ReactJS.
 
 # Getting started
 
 To get the Node server running locally:
 
 - Clone this repo
-- `npm install` to install all required dependencies, for both node and react.
-Run `cd node_backend/ && npm install`,  `cd react_frontend/ && npm install`
+- Run `cd node_backend/ && npm install`,  `cd react_frontend/ && npm install` to install all required dependencies, for both node and react.
 
-
-## Available Scripts
+# Available Scripts
 
 In the fronend and backend directory, you can run:
 
-### `npm run start`
+# `npm run start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -26,7 +26,7 @@ To view bookmarked repositories press `repositories` in menu.
 
 ## Application Structure
 
-## Backend
+# Backend
 
 - `app.js` - The entry point to application.
 - `routes/repository.js` - This file contains the route definitions for API, contains application endpints for retrieve repositories and GET, POST, DELETE bookmarks.
@@ -35,7 +35,7 @@ To view bookmarked repositories press `repositories` in menu.
 - `ormconfig.js` - Contains database configuration
 - `tsconfig.js` - Contains typescript configuration
 
-## Dependencies
+# Dependencies
 
 - [expressjs](https://github.com/expressjs/express) - The server for handling and routing HTTP requests
 - [typeorm](https://github.com/typeorm/typeorm)
@@ -44,7 +44,7 @@ To view bookmarked repositories press `repositories` in menu.
 - [lodash](https://lodash.com/) - Array handling
 - [node-global-storage](https://www.npmjs.com/package/node-global-storage) - Node module for global scope variable managing and storing data making it accessible in multiple Javascript files.
 
-## Frontend
+# Frontend
 
 - `src/App.js` - Start point of react application, implementation of `Routes`
 - `pages, component` Folder contains react component

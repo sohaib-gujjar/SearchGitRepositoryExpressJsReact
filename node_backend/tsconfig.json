@@ -11,6 +11,7 @@
         "allowSyntheticDefaultImports": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "allowJs": true,
         "paths": {
             "*": [
                 "src/*"
@@ -18,7 +19,7 @@
         }
     },
     "include": [
-        "src/**/*"
+        "src/**/*.ts"
     ],
     "exclude": ["node_modules", "**/*.spec.ts"]
 }

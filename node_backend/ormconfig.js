@@ -1,4 +1,5 @@
-const SOURCE_PATH = process.env.NODE_ENV === 'production' ? 'dist' : 'src';
+//const SOURCE_PATH = process.env.NODE_ENV === 'production' ? 'dist' : 'src';
+const SOURCE_PATH = './src';
 const MIGRATION_PATH = '/migration'
 
 module.exports = {
@@ -8,11 +9,11 @@ module.exports = {
   username: 'node-backend',
   password: 'password',
   database: 'backend-db',
-  entities: [`${SOURCE_PATH}/**/**.entity{.ts,.js}`],
+  entities: ["src/entity/*.js"],
   migrationsRun: true,
   synchronize: true,
   dropSchema: false,
-  logging: false,
+  logging: true,
   migrationsTableName: "migrations",
   migrations: [`${SOURCE_PATH}${MIGRATION_PATH}/*{.ts,.js}`],
   cli: {
