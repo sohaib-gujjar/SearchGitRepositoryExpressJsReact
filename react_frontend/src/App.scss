@@ -1,0 +1,281 @@
+$fontColor: navy;
+
+html {
+  background-color: white;
+}
+.App {
+  background-color: white;
+}
+
+.App-logo {
+  height: 8vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #404040;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row ;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 1vmin);
+  color: white;
+}
+.App-menu {
+  display: flex;
+  flex-direction: row ;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.App-link {
+  margin: 10px;
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.p-404-bck {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(78, 76, 76);
+}
+
+.p-404-box {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  color: #FFF;
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+.p-404-box h1 {
+  font-size: 60px;
+  line-height: 46px;
+  margin-bottom: 40px;
+}
+
+
+.searchBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: darkblue;
+  padding-top: 100px;
+}
+
+.search-button-box {
+  margin: 20px 0;
+  display: flex;
+  flex-flow: row-reverse;
+  width: 50%;
+  button {
+    background-color: orange;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+footer {
+  background-color: rgb(14, 14, 14);
+  padding: 15px;
+  text-align: center;
+  color: white;
+  position: absolute;
+
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+
+   display: none;
+}
+
+
+.input-component-responsive {
+  width: 500px;
+  position: relative;
+  margin: "5% 0 8% 0";
+  
+  input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px #6fa3b9 inset !important;
+  }
+
+  input:-webkit-autofill {
+    -webkit-text-fill-color: #ddd !important;
+  }
+  .input-component-label {
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    pointer-events: none;
+    top: 20%;
+    bottom: 55;
+    opacity: 0.65;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  .formik-input {
+    background-color: transparent;
+    font-size: 14px;
+    line-height: normal;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid darkgray;
+    box-sizing: border-box;
+  }
+
+  .formik-input:focus {
+    outline: none;
+  }
+  .formik-input:focus ~ .input-component-label,
+  .formik-input:not(:placeholder-shown) ~ .input-component-label {
+    top: -35%;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  .formik-input:focus ~ .error {
+    display: none;
+  }
+  .placeholder {
+    font-size: 10px;
+    padding-right: 2%;
+    color: lightslategray;
+    margin-top: -3%;
+    float: right;
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+  }
+  .formik-input:focus ~ .placeholder,
+  .formik-input:not(:placeholder-shown) ~ .placeholder {
+    margin-top: 0.5%;
+  }
+  .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .bar:before,
+  .bar:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    position: absolute;
+    background: $fontColor;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  .bar:before {
+    left: 50%;
+  }
+  .bar:after {
+    right: 50%;
+  }
+  .formik-input:focus ~ .bar:before,
+  .formik-input:focus ~ .bar:after {
+    width: 50%;
+  }
+
+  .highlight {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    top: 25%;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .formik-input:focus ~ .highlight {
+    -webkit-animation: highlighteranimation 0.4s ease;
+    -moz-animation: highlighteranimation 0.4s ease;
+    animation: highlighteranimation 0.4s ease;
+  }
+  @-webkit-keyframes highlighteranimation {
+    from {
+      background: gray;
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
+  }
+  @-moz-keyframes highlighteranimation {
+    from {
+      background: gray;
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
+  }
+  @keyframes highlighteranimation {
+    from {
+      background: gray;
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
+  }
+
+  .error {
+    color: red;
+    font-size: x-small;
+  }
+}
+
+
+table {
+  margin: 5% 5%;
+  border-collapse: collapse;
+  border:1px solid gray;
+  min-width: 90%;
+
+  th {
+    text-align: left;
+    padding: 12px;
+    background:#2e2d2d;
+    color: white;
+  }
+
+  tr{
+    padding: 15px;
+
+    &:nth-child(even) {
+      background-color: #f1f1f1;
+    }
+  }
+
+  td{
+    padding: 8px;
+  }
+}
