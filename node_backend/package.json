@@ -1,0 +1,29 @@
+{
+  "name": "node-backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "export PORT=3001 NODE_ENV=development && node ./bin/www",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:create init"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "lodash": "^4.17.15",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.0",
+    "node-global-storage": "^1.2.3",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4",
+    "typeorm": "^0.2.24"
+  },
+  "devDependencies": {
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
+  }
+}
