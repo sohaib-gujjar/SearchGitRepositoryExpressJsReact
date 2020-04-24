@@ -1,18 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var repo = require('../src/services/github_repository.service');
+var repo = require('../services/github_repository.service');
 
 //import GithubRepository from "../src/services/github_repository.service";
 
-// middleware for all
+
 /**
- * This function comment is parsed by doctrine
+ * middleware for all
  * @route GET /api
- * @group foo - Operations about user
- * @param {string} email.query.required - username or email - eg: user@domain
- * @param {string} password.query.required - user's password.
- * @returns {object} 200 - An array of user info
- * @returns {Error}  default - Unexpected error
  */
 router.use(function (req, res, next) {
   console.log('Time:', Date.now())
@@ -26,6 +21,10 @@ router.use('/:txt', function (req, res, next) {
 });
 
 /* GET all repositories. */
+/**
+ * GET all repositories.
+ * @route GET /api
+ */
 router.get('/get/:txt', function (req, res, next) {
   repo.githubRepository(req.params.txt, (result) => {
     res.send(result)

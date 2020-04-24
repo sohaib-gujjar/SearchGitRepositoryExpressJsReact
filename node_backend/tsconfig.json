@@ -12,6 +12,7 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "allowJs": true,
+        "resolveJsonModule": true,
         "paths": {
             "*": [
                 "src/*"

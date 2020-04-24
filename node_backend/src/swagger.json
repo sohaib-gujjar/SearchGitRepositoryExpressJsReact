@@ -1,0 +1,176 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Swagger Documentation",
+        "description": "This is exapmle ExpressJS project to search for repositories from github.",
+        "license": {
+            "name": "Nonlicensed"
+        }
+    },
+    "servers": [
+        {
+            "url": "/",
+            "description": "nodejs server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "ExpressJS",
+            "description": "API to search github repositories"
+        }
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/repository/get/{string}": {
+            "get": {
+                "tags": [
+                    "Search repositories"
+                ],
+                "parameters": [
+                    {
+                        "name": "string",
+                        "in": "path",
+                        "required": true,
+                        "description": "search term",
+                        "type": "string"
+                    }
+                ],    
+                "summary": "Get all repositories",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Repositories"
+                        }
+                    }
+                }
+            }
+        },
+        "/bookmark": {
+            "get": {
+                "tags": [
+                    "Bookmarks"
+                ],
+                "summary": "Get all bookmarks",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Repository"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error."
+                    }
+                }
+            },
+            "post": {
+                "summary": "Upload the bookmark with given ID",
+                "tags": [
+                    "Bookmarks"
+                ],
+                "requestBody": {
+                    "description": "Repository Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Repository"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "Bookmark with new values of properties",
+                        "schema": {
+                            "$ref": "#/definitions/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Repository"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data."
+                    },
+                    "404": {
+                        "description": "Failed. Bookmark not found."
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete bookmark with given ID",
+                "tags": [
+                    "Bookmarks"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "Delete bookmark with id",
+                        "schema": {
+                            "$ref": "#/definitions/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/id"
+                        }
+                    },
+                    "404": {
+                        "description": "Failed. Bookmark not found."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "id": {
+            "properties": {
+                "uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "Repository": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "author": {
+                    "type": "string"
+                }
+            }
+        },
+        "Repositories": {
+            "type": "object",
+            "properties": {
+                "Repository": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/Repositories"
+                    }
+                }
+            }
+        }
+    }
+}

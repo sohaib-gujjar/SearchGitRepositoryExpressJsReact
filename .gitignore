@@ -2,6 +2,7 @@
 
 # dependencies node
 node_backend/node_modules
+node_backend/dist
 
 # dependencies react
 react_frontend/node_modules
